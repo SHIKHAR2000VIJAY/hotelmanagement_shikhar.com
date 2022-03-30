@@ -1,0 +1,245 @@
+:after,
+:before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: var(--secondary-color);
+}
+
+h5 {
+    color: var(--white-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --primary-color: #FFC222;
+    --secondary-color: #00a149;
+    --white-color: #fff;
+    --black-color: #1e1d23;
+    --text-color: #b0b0b0;
+
+}
+
+/* background image */
+.bg {
+    background-image: url(bg-1.jpg);
+
+}
+
+/* --------------------------------header design -------------------------------------------------------*/
+.navigation-wrap {
+    /* position: fixed; */
+    width: 100%;
+    /* background-color: var(--black-color); */
+    /* z-index: 10000; */
+    /* transition: all 0.3s ease-out; */
+}
+
+.navigation-wrap .nav-item {
+    padding: 0 0.625rem;
+
+    /* transition: all 0.3s linear; */
+}
+
+.navigation-wrap .nav-item .nav-link {
+    color: var(--white-color);
+    text-transform: capitalize;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.navigation-wrap .nav-item .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* .navigation-wrap .main-btn {
+     padding: 0.3125rem 1.4375rem; 
+    margin-left: 0.625rem;
+
+} */
+.main-btn {
+    display: inline-block;
+    /* padding: 0.625rem 1.875rem; */
+    padding: 0.3125rem 1.4375rem;
+    line-height: 1.5625rem;
+    background-color: var(--primary-color);
+    border: 0.1875rem solid var(--secondary-color);
+    color: var(--black-color);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-radius: 8px;
+    box-shadow: 1px 2px 10px red;
+    margin-left: 0.625rem;
+}
+
+.main-btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.ma {
+    color: blanchedalmond;
+}
+
+/* -------------------------------top-banner---------------------------------------- */
+.top-banner {
+    width: 100%;
+    background-image: var(--primary-color);
+    background-size: cover;
+    padding: 14.009rem 0 9.375rem;
+
+}
+
+.top-banner h1 {
+    color: var(--primary-color);
+}
+
+.top-banner h2 {
+    color: var(--secondary-color);
+}
+
+.top-banner p {
+    color: var(--white-color);
+}
+
+/* ----------------------------our-menu design------------------------------------- */
+.our-menu .card {
+    border: none;
+}
+
+.our-menu .link_category_product {
+    position: relative;
+    display: block;
+    z-index: 1;
+}
+
+/* special hover effect */
+.our-menu .link_category_product::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    background-color: var(--primary-color);
+    /* transition: all .4s ease; */
+    /* -webkit-transition: all .4s ease; */
+}
+
+.card:hover .link_category_product::before {
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+/* .link_category_product:hover {
+    background-color: black;
+} */
+
+.our-menu .cat-title a {
+    text-align: center;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
+
+.our-menu .cat-title a:hover {
+    color: var(--primary-color)
+}
+
+/* about section design */
+.about-section {
+    background-color: var(--black-color);
+    padding-top: 50px;
+}
+
+.about-section .card,
+.about-section .card img {
+    border-radius: 1rem;
+
+}
+
+.about-section .text-sec {
+    padding-left: 2rem;
+}
+
+/* food type design */
+.food-type {
+    padding-top: 2rem;
+}
+
+.food-type ul li {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 32px;
+    margin-left: 30px;
+
+}
+
+/* explore food */
+.explore-food .card {
+    background-color: black;
+    border-radius: 15px;
+}
+
+.explore-food .card img {
+    border-radius: 15px;
+}
+
+.explore-food .card .card-title {
+    color: var(--text-color);
+}
+
+/* Testimonial section design */
+.testimonial-section {
+    background-color: var(--secondary-color);
+    padding-bottom: 90px;
+
+}
+
+.testimonial-section h2 {
+    color: var(--white-color);
+}
+
+.testimonial-section .carousel-item {
+    margin-top: 10px;
+    padding: 110px;
+
+    background-color: var(--black-color);
+    border-radius: 80px;
+    /* text-align: center; */
+
+
+}
+
+.testimonial-section .carousel-item .carousel-option img {
+    max-width: 10rem;
+    border-radius: 50%;
+
+
+}

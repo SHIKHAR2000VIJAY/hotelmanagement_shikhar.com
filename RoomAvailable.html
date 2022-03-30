@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css1.css">
+
+    <title>Room Available</title>
+  </head>
+  <body>
+    
+    <!-- nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="dash.html">Hi, Shikhar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="Roomtype.html">Room Category</a>
+              </li>
+           <li class="nav-item">
+                <a class="nav-link" href="RoomAvailable.html">Availabilty</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Food Ordering.html">Food Page</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+                <div class="input-group">
+                    <input type="search" class="form-control form-control-sm" placeholder="Search.." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button class="btn btn-sm btn-success" type="submit" id="button-addon2"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+
+            <a href="loginpage.html" class="ml-3 btn btn-sm btn-warning">Log Out</a>
+
+          </div>
+        </div>
+    </nav>
+    <!-- nav -->
+
+    <!-- dashboard contents -->
+    <div class="container-fluid">
+        <div class="row mt-3">
+            <div class="col-lg-3 col-md-3">
+                <div class="list-group small">
+                    <div class="list-group-item active">Guest Data</div>
+                    <a href="#" class="list-group-item" data-toggle="modal" data-target="#add_job">Add New Guest</a>
+                    <a href="Guestlist.html" class="list-group-item">View all Guest</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <table class="table table-striped table-hover bg-light small">
+                    <tr class="table-dark">
+                        <th>ID</th>
+                        <th>Room Type</th>
+                        <th>Details</th>
+                        <th>Available</th>
+                        <th>Cancel</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Super Deluxe Room</td>
+                        <td><a href="Roomtype.html" target="_blank" class="btn btn-sm btn-block btn-info">Details</a></td>
+                        <td><a href="#" data-toggle="modal" data-target="#job_details1" class="btn btn-sm btn-block btn-warning">Available</a></td>
+                        <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Are you sure you want to Cancel \' The Room \'?');">Cancel</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Semi Deluxe Room</td>
+                        <td><a href="Roomtype.html" target="_blank" class="btn btn-sm btn-block btn-info">Details</a></td>
+                        <td><a href="#" data-toggle="modal" data-target="#job_details2" class="btn btn-sm btn-block btn-warning">Available</a></td>
+                        <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Are you sure you want to Cancel \' The Room\'?');">Cancel</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Deluxe Room</td>
+                        <td><a href="Roomtype.html" target="_blank" class="btn btn-sm btn-block btn-info">Details</a></td>
+                        <td><a href="#" data-toggle="modal" data-target="#job_details3" class="btn btn-sm btn-block btn-warning">Available</a></td>
+                        <td><a href="#" class="btn btn-sm btn-block btn-danger" onclick="confirm('Are you sure you want to Cancel \' The Room\'?');">Cancel</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- dashboard contents -->
+
+    <!-- Add Job Modal -->
+    <div class="modal fade" id="add_job" tabindex="-1" aria-labelledby="add_job" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Job Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" name="google-sheet2">
+                    <div class="mb-3">
+                        <input type="date" name="Date" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="Guest Name" class="form-control form-control-sm" placeholder="Guest Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-sm btn-success btn-block" name="submit">Add New Guest</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Job Details Model -->
+    <div class="modal fade" id="job_details1" tabindex="-1" aria-labelledby="job_details1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Super Deluxe Room</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Total Rooms</th>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <th>Available</th>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <th>Booked</th>
+                    <td>8</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+ <!-- Job Details Model -->
+    <div class="modal fade" id="job_details2" tabindex="-1" aria-labelledby="job_details1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Semi Deluxe Room</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Total Rooms</th>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <th>Available</th>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <th>Booked</th>
+                    <td>18</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+
+ <!-- Job Details Model -->
+    <div class="modal fade" id="job_details3" tabindex="-1" aria-labelledby="job_details1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Deluxe Rooms</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Total Rooms</th>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <th>Available</th>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <th>Booked</th>
+                    <td>20</td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+    <!-- Edit Job Detaisl -->
+    <div class="modal fade" id="job_edit_details1" tabindex="-1" aria-labelledby="job_edit_details1" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Room details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <input type="date" name="Date" class="form-control form-control-sm" required>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-control form-control-sm" placeholder="Room Type" name="Room Type">
+                            <option value="Super Deluxe Room">Super Deluxe Room</option>
+                            <option value="Semi Deluxe Room">Semi Deluxe Room</option>
+                            <option value="Deluxe Room">Deluxe Room</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" name="submit" class="btn btn-sm btn-success btn-block">Update Room</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxmYRpZvtbtCUYs9r1yGSW08qsn5f4kssX0ShL46WV5-YH8mYT_y8VsiauPt3OLeaehig/exec'
+            const form = document.forms['google-sheet2']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+    <!-- Optional JavaScript -->
+    <!-- Popper.js first, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  </body>
+</html>
